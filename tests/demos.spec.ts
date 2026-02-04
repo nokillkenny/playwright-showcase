@@ -18,7 +18,7 @@ test.describe('demos section', () => {
     await expect(demosPage.frameworkCards).toHaveCount(3);
     await expect(demosPage.getCard('playwright')).toBeVisible();
     await expect(demosPage.getCard('ruby-cucumber')).toBeVisible();
-    await expect(demosPage.getCard('codecept')).toBeVisible();
+    await expect(demosPage.getCard('codeceptjs')).toBeVisible();
   });
 
   test('opens report viewer on click', async ({ demosPage, page }) => {
@@ -47,7 +47,7 @@ test.describe('demos section', () => {
   });
 
   test('repo links point to github', async ({ demosPage }) => {
-    for (const fw of ['playwright', 'ruby-cucumber', 'codecept']) {
+    for (const fw of ['playwright', 'ruby-cucumber', 'codeceptjs']) {
       const repoLink = demosPage.getCard(fw).locator('a');
       await expect(repoLink).toHaveAttribute('href', /github\.com\/nokillkenny/);
     }

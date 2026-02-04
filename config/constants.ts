@@ -23,8 +23,8 @@ export const EXTERNAL_LINKS = {
 export const REPORT_URLS = {
   playwright: 'https://github.com/nokillkenny/playwright-showcase/',
   rubyCucumber: 'https://github.com/nokillkenny/rspec-capybara-page-object-example',
-  codecept: 'https://github.com/nokillkenny/codeceptjs-rest-bdd',
+  codeceptjs: 'https://github.com/nokillkenny/codeceptjs-rest-bdd',
 } as const;
 
 export const SECTIONS = ['intro', 'career', 'demos'] as const;
-export const FRAMEWORKS = ['playwright', 'ruby-cucumber', 'codecept'] as const;
+export const FRAMEWORKS = ['playwright', 'ruby-cucumber', 'codeceptjs'] as const;

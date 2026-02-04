@@ -25,7 +25,7 @@ export class DemosPage extends BasePage {
     this.closeReportBtn = page.getByTestId('close-report');
   }
 
-  async openReports(framework: 'playwright' | 'ruby-cucumber' | 'codecept') {
+  async openReports(framework: 'playwright' | 'ruby-cucumber' | 'codeceptjs') {
     const card = this.page.getByTestId(`card-${framework}`);
     await card.locator('.link-btn').click();
   }
