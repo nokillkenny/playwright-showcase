@@ -1,0 +1,15 @@
+{
+  "name": "playwright-showcase",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report",
+    "validate": "./scripts/validate-report.sh"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.0",
+    "@playwright/test": "^1.40.0"
+  }
+}

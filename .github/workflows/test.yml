@@ -1,0 +1,47 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      
+      - name: Run tests
+        run: npm test
+        env:
+          BASE_URL: https://nokillkenny.github.io/portfolio/
+      
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+
+  notify-showcase:
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.SHOWCASE_PAT }}
+          repository: nokillkenny/test-showcase
+          event-type: test-completed
+          client-payload: '{"repo": "playwright-showcase", "artifact": "playwright-report"}'
