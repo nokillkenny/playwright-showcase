@@ -2,7 +2,7 @@ services:
   test:
     build: .
     environment:
-      - BASE_URL=${BASE_URL:-https://nokillkenny.github.io/portfolio/}
+      - BASE_URL=${BASE_URL:-https://nokillkenny.github.io/}
     volumes:
       - ./playwright-report:/app/playwright-report
       - ./test-results:/app/test-results

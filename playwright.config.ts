@@ -1,6 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
-const baseURL = process.env.BASE_URL || 'https://nokillkenny.github.io/portfolio/';
+const baseURL = process.env.BASE_URL || 'https://nokillkenny.github.io/';
 
 export default defineConfig({
   testDir: './tests',

@@ -2,7 +2,7 @@
 
 [![Playwright Tests](https://github.com/nokillkenny/playwright-showcase/actions/workflows/test.yml/badge.svg)](https://github.com/nokillkenny/playwright-showcase/actions/workflows/test.yml)
 
-Playwright test suite for [portfolio](https://nokillkenny.github.io/portfolio) demonstrating scalable test architecture patterns.
+Playwright test suite for [portfolio](https://nokillkenny.github.io/) demonstrating scalable test architecture patterns.
 
 ## Architecture
 
@@ -40,7 +40,7 @@ npx playwright install chromium
 
 ```bash
 # Against local dev server
-BASE_URL=http://localhost:4321/portfolio/ npm test
+BASE_URL=http://localhost:4321/ npm test
 
 # Against production
 npm test
@@ -56,11 +56,11 @@ docker build -t playwright-showcase .
 docker run --rm playwright-showcase
 
 # Run against local dev server (start with --host first)
-# In portfolio: npm run dev -- --host
-docker run --rm -e BASE_URL=http://host.docker.internal:4321/portfolio/ playwright-showcase
+# In portfolio repo: npm run dev -- --host
+docker run --rm -e BASE_URL=http://host.docker.internal:4321/ playwright-showcase
 
 # With docker-compose (outputs reports to local folders)
-BASE_URL=http://host.docker.internal:4321/portfolio/ docker compose up
+BASE_URL=http://host.docker.internal:4321/ docker compose up
 ```
 
 Note: For local Docker testing, start the dev server with `--host` flag to allow external connections.

@@ -24,7 +24,7 @@ jobs:
       - name: Run tests
         run: npm test
         env:
-          BASE_URL: https://nokillkenny.github.io/portfolio/
+          BASE_URL: https://nokillkenny.github.io/
       
       - name: Upload report
         uses: actions/upload-artifact@v6
