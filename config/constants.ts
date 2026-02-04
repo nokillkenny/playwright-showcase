@@ -7,7 +7,7 @@
  * - Type safety across specs
  */
 
-export const BASE_URL = process.env.BASE_URL || 'https://nokillkenny.github.io/portfolio/';
+export const BASE_URL = process.env.BASE_URL || 'https://nokillkenny.github.io/';
 
 export const VIEWPORTS = {
   mobile: { width: 375, height: 667 },
@@ -21,9 +21,9 @@ export const EXTERNAL_LINKS = {
 } as const;
 
 export const REPORT_URLS = {
-  playwright: 'https://nokillkenny.github.io/test-showcase/playwright/',
-  rubyCucumber: 'https://nokillkenny.github.io/test-showcase/ruby-cucumber/',
-  codecept: 'https://nokillkenny.github.io/test-showcase/codecept/',
+  playwright: 'https://github.com/nokillkenny/playwright-showcase/',
+  rubyCucumber: 'https://github.com/nokillkenny/rspec-capybara-page-object-example',
+  codecept: 'https://github.com/nokillkenny/codeceptjs-rest-bdd',
 } as const;
 
 export const SECTIONS = ['intro', 'career', 'demos'] as const;
