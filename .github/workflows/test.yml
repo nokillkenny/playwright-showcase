@@ -27,7 +27,7 @@ jobs:
           BASE_URL: https://nokillkenny.github.io/portfolio/
       
       - name: Upload report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: always()
         with:
           name: playwright-report
